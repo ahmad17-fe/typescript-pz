@@ -32,3 +32,10 @@ const fullName = (nd: string, nb: string = "doe"): string => {
 
 console.log(fullName("Ahmad", "Shobirin"));
 console.log(fullName("Ahmad"));
+
+// Optional parameter
+const printUmur = (val1: number, val2?: string): void => {
+  console.log(`${val1} ${val2}`);
+};
+
+console.log(printUmur(20));
