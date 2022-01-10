@@ -24,3 +24,11 @@ type Tambah = (num1: number, num2: number) => number;
 const Add: Tambah = (num1: number, num2: number): number => {
   return num1 + num2;
 };
+
+// Default Parameter
+const fullName = (nd: string, nb: string = "doe"): string => {
+  return `${nd} ${nb}`;
+};
+
+console.log(fullName("Ahmad", "Shobirin"));
+console.log(fullName("Ahmad"));
