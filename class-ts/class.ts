@@ -8,11 +8,34 @@ class User {
     const randomNum = (Math.random() * age).toString();
     this.id = randomNum;
   }
+
+  setName(name: string): void {
+    this.name = name;
+  }
+
+  getName(): string {
+    return this.name;
+  }
 }
 
 export default User;
 
-let user1 = new User("Ahmad", 20, Gender.Male);
-let user2 = new User("Unknown", 20, Gender.Female);
-console.log(user1);
-console.log(user2);
+const user = new User("Ahmad", 20, Gender.Male);
+console.log(user);
+
+// Inheritance
+class Admin extends User {
+  read: boolean = true;
+  write: boolean = true;
+
+  getRole(): { read: boolean; write: boolean } {
+    return {
+      read: this.read,
+      write: this.write,
+    };
+  }
+}
+
+const admin = new Admin("Ahmad", 20, Gender.Male);
+
+console.log(admin);
